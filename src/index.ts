@@ -1,6 +1,6 @@
 import { Probot } from "probot";
 import {handleIssueOpened} from "./handlers/issues.js";
-import {handlePullRequestOpened} from "./handlers/pullRequest.js";
+import {handlePullRequestOpened, handlePullRequestSynchronize} from "./handlers/pullRequest.js";
 
 export default (app: Probot) => {
     app.onAny(async (context) => {
@@ -9,4 +9,5 @@ export default (app: Probot) => {
 
     app.on("issues.opened", handleIssueOpened);
     app.on("pull_request.opened", handlePullRequestOpened);
+    app.on("pull_request.synchronize", handlePullRequestSynchronize);
 };
