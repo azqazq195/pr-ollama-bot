@@ -10,7 +10,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const payload = JSON.parse(
     fs.readFileSync(
-        path.join(__dirname, "fixtures/pull_request.opened.json"),
+        path.join(__dirname, "fixtures/pull-request.opened.json"),
         "utf-8",
     ),
 );

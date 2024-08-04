@@ -1,13 +1,10 @@
-import { Probot } from "probot";
-import {handleIssueOpened} from "./handlers/issues.js";
-import {handlePullRequestOpened, handlePullRequestSynchronize} from "./handlers/pullRequest.js";
+import {Probot} from "probot";
+import {handlePullRequest} from "./pull-request/index.js";
 
 export default (app: Probot) => {
     app.onAny(async (context) => {
-        app.log.info({ event: context.name, action: context.payload });
+        app.log.info({event: context.name});
     });
 
-    app.on("issues.opened", handleIssueOpened);
-    app.on("pull_request.opened", handlePullRequestOpened);
-    app.on("pull_request.synchronize", handlePullRequestSynchronize);
+    app.on("pull_request", handlePullRequest)
 };
