@@ -8,18 +8,21 @@
 # Install dependencies
 npm install
 
+# Build Typescript
+npm run build
+
 # Run the bot
-npm start
+npm run start
 ```
 
 ## Docker
 
 ```sh
 # 1. Build container
-docker build -t pr-conductor .
+docker build -t pr-ollama-bot .
 
 # 2. Start container
-docker run -e APP_ID=<app-id> -e PRIVATE_KEY=<pem-value> pr-conductor
+docker run -e APP_ID=<app-id> -e PRIVATE_KEY=<pem-value> pr-ollama-bot
 ```
 
 ## Contributing
